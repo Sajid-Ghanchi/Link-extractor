@@ -53,10 +53,7 @@ app.post('/api/extract-links', async (req, res) => {
     const outputArray = Array.from(uniqueLinks).map(link => ({ Link: link }));
 
     // Send the final response
-    return res.json({
-        total_extracted: outputArray.length,
-        data: outputArray
-    });
+    return res.json(outputArray);
 
   } catch (error) {
     console.error("Server Error:", error);
